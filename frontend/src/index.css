@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hide scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+.scrollbar-hide {
+    -ms-overflow-style: none; 
+    scrollbar-width: none;  
+}
+  
+::-webkit-scrollbar {
+  display: none;
+}
+
+.tinos-font{
+  font-family: 'Tinos', serif;
+  font-weight: 200;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(12px);
+  }
+  100% {
+    transform: translateY(0); 
+  }
+}
+
+.arrow {
+  animation: bounce 1s ease-in-out infinite;
+}
