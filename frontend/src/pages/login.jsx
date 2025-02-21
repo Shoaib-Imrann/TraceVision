@@ -110,7 +110,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { toast } from 'react-toastify';
+import { toast } from 'react-hot-toast';
 import { IoIosArrowRoundForward } from 'react-icons/io';
 
 
@@ -188,7 +188,7 @@ const Login = ({ setToken }) => {
         onChange={(e) => setEmail(e.target.value)}
         value={email}
         type="email"
-        className="w-full px-3 py-3  bg-gray-800 border-none text-white rounded-md"
+        className="w-full px-3 py-4 bg-gray-800 border-none text-white text-sm rounded-md"
         placeholder="Email"
         required
       />
@@ -196,15 +196,15 @@ const Login = ({ setToken }) => {
         onChange={(e) => setPassword(e.target.value)}
         value={password}
         type="password"
-        className="w-full px-3 py-3  bg-gray-800 border-none text-white rounded-md"
+        className="w-full px-3 py-4 text-sm  bg-gray-800 border-none text-white rounded-md"
         placeholder="Password"
         required
       />
       <div className="w-full flex justify-between mt-2">
         {currentState === 'Login' ? (
           <>
-          <p className="cursor-pointer text-sm">Forgot your password?</p>
-          <p onClick={() => setCurrentState('Sign Up')} className="cursor-pointer text-sm">
+          <p className="cursor-pointer text-xs">Forgot password?</p>
+          <p onClick={() => setCurrentState('Sign Up')} className="cursor-pointer text-xs">
             Create account
           </p>
           </>

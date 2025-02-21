@@ -152,12 +152,13 @@ def video_feed():
 @app.route("/start_detection", methods=["POST"])
 def start_detection():
     global cap
-    if cap is None or not cap.isOpened():
-        cap = cv2.VideoCapture(0)  # Initialize webcam when detection starts
-        if not cap.isOpened():
-            return {"message": "Error: Could not open webcam."}, 500
+    cap = cv2.VideoCapture(0)  # Try changing 0 to 1 or 2 if needed
+    if not cap.isOpened():
+        print("Error: Could not open webcam.")  # Debugging message
+        return {"message": "Error: Could not open webcam."}, 500
     print("Detection started.")
     return {"message": "Detection started."}
+
 
 @app.route("/stop_detection", methods=["POST"])
 def stop_detection():
